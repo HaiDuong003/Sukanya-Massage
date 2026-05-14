@@ -157,11 +157,20 @@ h1, h2, h3, h4, h5, h6 {
 /* ===========================================
    Navigation
    =========================================== */
+/* Initial state: fully transparent */
 .nav-transparent {
   background: transparent !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
   border-bottom-color: transparent !important;
+}
+
+/* Scrolled state: glass dark background + gold border */
+.nav-scrolled {
+  background: rgba(44, 36, 27, 0.85) !important;
+  backdrop-filter: blur(12px) saturate(1.1) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(1.1) !important;
+  border-bottom-color: rgba(212, 175, 55, 0.2) !important;
 }
 
 /* ===========================================

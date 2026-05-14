@@ -89,23 +89,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ---------- Navbar Scroll Effect ----------
   const nav = document.querySelector('nav');
-  let lastScrollY = 0;
 
   function handleNavScroll() {
-    const scrollY = window.scrollY;
-
-    if (scrollY < 60) {
+    if (window.scrollY < 60) {
+      nav.classList.remove('nav-scrolled');
       nav.classList.add('nav-transparent');
     } else {
       nav.classList.remove('nav-transparent');
+      nav.classList.add('nav-scrolled');
     }
-
-    lastScrollY = scrollY;
-  }
-
-  // Set initial state
-  if (window.scrollY < 60) {
-    nav.classList.add('nav-transparent');
   }
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
