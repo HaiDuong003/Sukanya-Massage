@@ -4,383 +4,526 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Sukanya Massage - Traditionelle Thai-Massage in Hamburg, Norderstedt und Wedel. Erleben Sie Entspannung für Körper und Geist.">
-    <title>Sukanya Massage | Traditionelle Thai-Massage &amp; Spa</title>
-    <!-- Scripts -->
+        content="Sukanya Massage — Traditionelle Thai-Massage in Offenbach am Main. Erleben Sie authentische Entspannung für Körper und Geist.">
+    <title>Sukanya Massage | Traditionelle Thai-Massage &amp; Spa — Offenbach</title>
+
+    <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif']
+                    },
+                    colors: {
+                        gold: { DEFAULT: '#D4AF37', light: '#eac54e', dark: '#b8962e' },
+                        wood: { DEFAULT: '#2c241b', light: '#3d3226' },
+                        cream: { DEFAULT: '#f9f7f2', dark: '#f0ece4' },
+                        burgundy: { DEFAULT: '#701d25', light: '#8a2a33' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Iconify -->
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&amp;family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <!-- Custom Tailwind Configuration via Style Block -->
-    <style>
-        /* Custom Colors */
-        :root {
-            --thai-gold: #D4AF37;
-            --thai-gold-light: #eac54e;
-            --dark-wood: #2c241b;
-            --cream-bg: #f9f7f2;
-            --burgundy: #701d25;
-        }
 
-        body {
-            font-family: 'Lato', sans-serif;
-            color: var(--dark-wood);
-            background-color: var(--cream-bg);
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: 'Playfair Display', serif;
-        }
-
-        /* Gold Gradient Text */
-        .text-gold-gradient {
-            background: linear-gradient(to right, #D4AF37, #F2D06B, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Custom Form Inputs */
-        .form-input {
-            background-color: transparent;
-            border-bottom: 1px solid #d1d5db;
-            transition: all 0.3s ease;
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-bottom: 1px solid #D4AF37;
-            box-shadow: 0 1px 0 0 #D4AF37;
-        }
-
-        /* Selection Color */
-        ::selection {
-            background: #D4AF37;
-            color: #fff;
-        }
-
-        /* Mobile Menu Transition */
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-        }
-    </style>
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body class="antialiased overflow-x-hidden">
+<body class="antialiased overflow-x-hidden text-wood bg-cream">
 
-    <!-- Navigation -->
-    <nav
-        class="fixed w-full z-50 transition-all duration-300 bg-[#2c241b]/95 backdrop-blur-md border-b border-[#D4AF37]/30">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+    <!-- ============================================
+    NAVIGATION
+    ============================================ -->
+    <nav class="fixed w-full z-50 transition-all duration-500 border-b border-transparent nav-transparent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
             <!-- Logo -->
-            <a href="#" class="flex items-center gap-2 group">
-                <iconify-icon icon="solar:lotus-linear" class="text-[#D4AF37] text-3xl"></iconify-icon>
+            <a href="#" class="flex items-center gap-2 sm:gap-3 group">
+                <iconify-icon icon="solar:lotus-linear"
+                    class="text-gold text-2xl sm:text-3xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+                </iconify-icon>
                 <div class="flex flex-col">
-                    <span class="text-xl font-serif text-white tracking-wider font-semibold">SUKANYA</span>
-                    <span class="text-[10px] text-[#D4AF37] uppercase tracking-[0.3em] ml-0.5">Thai-massage</span>
+                    <span class="text-lg sm:text-xl font-serif text-white tracking-[0.15em] font-semibold leading-tight">SUKANYA</span>
+                    <span class="text-[9px] sm:text-[10px] text-gold uppercase tracking-[0.25em] leading-tight">Thai-Massage</span>
                 </div>
             </a>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center gap-8 text-sm uppercase tracking-widest text-gray-300 font-medium">
-                <a href="#about" class="hover:text-[#D4AF37] transition-colors">Über Uns</a>
-                <a href="#services" class="hover:text-[#D4AF37] transition-colors">Leistungen</a>
-                <a href="#locations" class="hover:text-[#D4AF37] transition-colors">Standorte</a>
+            <div class="hidden md:flex items-center gap-6 lg:gap-10">
+                <a href="#about"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Über
+                    Uns</a>
+                <a href="#services"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Leistungen</a>
+                <a href="#locations"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Standorte</a>
+                <a href="#booking"
+                    class="ml-2 px-5 py-2.5 bg-gold text-wood text-xs uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/25">Termin
+                    buchen</a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="menu-btn" class="md:hidden text-[#D4AF37] text-2xl focus:outline-none">
+            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none hover:text-gold-light transition-colors">
                 <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
             </button>
         </div>
-
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu"
-            class="fixed inset-0 bg-[#2c241b] z-40 transform translate-x-full flex flex-col pt-24 px-8 gap-8 h-screen md:hidden">
-            <button id="close-menu" class="absolute top-6 right-6 text-white text-3xl">
-                <iconify-icon icon="solar:close-circle-linear"></iconify-icon>
-            </button>
-            <a href="#about" class="text-2xl font-serif text-white border-b border-white/10 pb-4">Über Uns</a>
-            <a href="#services" class="text-2xl font-serif text-white border-b border-white/10 pb-4">Leistungen</a>
-            <a href="#locations" class="text-2xl font-serif text-white border-b border-white/10 pb-4">Standorte</a>
-            <!-- <a href="#booking" class="text-2xl font-serif text-[#D4AF37] font-bold">Termin buchen</a> -->
-        </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="relative w-full h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-black/50 z-40 transition-opacity duration-400 opacity-0 pointer-events-none md:hidden">
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-wood z-50 transform translate-x-full flex flex-col pt-24 px-8 gap-6 shadow-2xl md:hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-5 right-5 text-gray-400 hover:text-white text-3xl transition-colors">
+            <iconify-icon icon="solar:close-circle-linear"></iconify-icon>
+        </button>
+
+        <!-- Decorative top line -->
+        <div class="gold-divider mb-2"></div>
+
+        <a href="#about"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Über Uns</a>
+        <a href="#services"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Leistungen</a>
+        <a href="#locations"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Standorte</a>
+        <a href="#booking"
+            class="mt-4 px-6 py-3 bg-gold text-wood text-center text-sm uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-gold-light transition-all">Termin
+            buchen</a>
+
+        <!-- Contact info in mobile menu -->
+        <div class="mt-auto pb-8 text-gray-500 text-xs space-y-2">
+            <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:map-point-linear" class="text-gold text-sm"></iconify-icon>
+                <span>Frankfurter Str. 47, 63065 Offenbach</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:phone-calling-linear" class="text-gold text-sm"></iconify-icon>
+                <span>0152&nbsp;38426370</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+    HERO
+    ============================================ -->
+    <header class="relative w-full h-screen min-h-[600px] sm:min-h-[700px] flex items-center justify-center overflow-hidden">
+
+        <!-- Decorative lotus elements -->
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[200px] sm:text-[350px] top-10 -left-20 text-gold animate-[lotusSpin_60s_linear_infinite]">
+        </iconify-icon>
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[150px] sm:text-[250px] bottom-20 -right-16 text-gold animate-[lotusSpin_80s_linear_infinite]">
+        </iconify-icon>
+
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80"
-                alt="Thai Spa Atmosphere" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+                alt="Thai Spa Atmosphäre"
+                class="w-full h-full object-cover scale-105 transition-transform duration-[2s]">
             <!-- Overlay -->
-            <div class="absolute inset-0 bg-gradient-to-b from-[#2c241b]/80 via-[#2c241b]/50 to-[#2c241b]/90"></div>
+            <div class="absolute inset-0 hero-overlay"></div>
         </div>
 
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto pt-16">
-            <div class="flex items-center justify-center gap-4 mb-6 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
-                <div class="h-[1px] w-12 bg-[#D4AF37]"></div>
-                <span class="text-[#D4AF37] uppercase tracking-[0.3em] text-xs md:text-sm font-semibold">Sawadee
-                    Ka</span>
-                <div class="h-[1px] w-12 bg-[#D4AF37]"></div>
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto pt-16">
+            <!-- Top badge -->
+            <div class="flex items-center justify-center gap-3 sm:gap-4 mb-5 sm:mb-8 reveal reveal-up">
+                <div class="h-[1px] w-8 sm:w-12 bg-gold"></div>
+                <span class="text-gold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[10px] sm:text-xs md:text-sm font-semibold">
+                    Sawadee Ka — Offenbach am Main
+                </span>
+                <div class="h-[1px] w-8 sm:w-12 bg-gold"></div>
             </div>
 
-            <h1
-                class="text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight opacity-0 animate-[fadeIn_1s_ease-out_0.3s_forwards]">
-                Traditionelle <br>
+            <!-- Main Heading -->
+            <h1 class="hero-title text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-white mb-4 sm:mb-6 leading-[1.1] reveal reveal-up delay-100">
+                Traditionelle<br>
                 <span class="text-gold-gradient italic">Thai-Massage</span>
             </h1>
+
+            <!-- Subtitle -->
+            <p class="text-gray-300 text-sm sm:text-base md:text-lg max-w-2xl mx-auto font-light tracking-wide reveal reveal-up delay-200">
+                Authentische Nuad Phaen Boran in Offenbach — ein Ort der Stille,<br class="hidden sm:block">
+                der Entspannung und der ganzheitlichen Regeneration.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8 sm:mt-10 reveal reveal-up delay-300">
+                <a href="#booking"
+                    class="px-8 py-3.5 bg-gold text-wood text-sm uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-gold-light transition-all duration-300 hover:shadow-xl hover:shadow-gold/30">
+                    Termin buchen
+                </a>
+                <a href="#services"
+                    class="px-8 py-3.5 border border-white/30 text-white text-sm uppercase tracking-[0.15em] rounded-sm hover:bg-white/10 transition-all duration-300">
+                    Unsere Leistungen
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-6 sm:bottom-10 left-1/2 -translate-x-1/2 z-10 scroll-indicator">
+            <iconify-icon icon="solar:double-alt-arrow-down-linear" class="text-gold text-2xl sm:text-3xl"></iconify-icon>
         </div>
     </header>
 
-    <!-- About / Intro -->
-    <section id="about" class="py-20 md:py-32 bg-[#f9f7f2]">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="relative">
-                <div class="absolute -top-4 -left-4 w-full h-full border border-[#D4AF37] rounded-sm z-0"></div>
-                <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80"
-                    alt="Relaxing Massage" class="relative z-10 w-full h-[500px] object-cover rounded-sm shadow-xl">
-            </div>
-            <div>
-                <h2 class="text-[#701d25] text-4xl md:text-5xl mb-6">Zeit für Ruhe &amp; <span
-                        class="italic text-[#D4AF37]">Balance</span></h2>
-                <p class="text-gray-600 mb-6 leading-loose font-light">
-                    In der Hektik des Alltags vergessen wir oft das Wichtigste: uns selbst. Bei Sukanya Massage bieten
-                    wir Ihnen einen Rückzugsort der Stille und Erholung.
-                </p>
-                <p class="text-gray-600 mb-8 leading-loose font-light">
-                    Unsere erfahrenen Therapeutinnen praktizieren die authentische Nuad Phaen Boran – die traditionelle
-                    Thai-Massage. Durch sanfte Dehnungen und rhythmischen Druck entlang der Energielinien lösen wir
-                    Blockaden und aktivieren Ihre Selbstheilungskräfte.
-                </p>
-                <div class="flex gap-8">
-                    <div class="flex flex-col">
-                        <iconify-icon icon="solar:cup-hot-linear" class="text-[#D4AF37] text-3xl mb-2"></iconify-icon>
-                        <span class="text-sm uppercase tracking-wider font-bold text-[#2c241b]">Teezeremonie</span>
+
+    <!-- ============================================
+    ABOUT
+    ============================================ -->
+    <section id="about" class="py-16 sm:py-20 md:py-32 bg-cream relative overflow-hidden">
+        <!-- Decorative lotus -->
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[180px] sm:text-[280px] -left-24 top-1/2 -translate-y-1/2 text-gold opacity-[0.04]">
+        </iconify-icon>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 lg:gap-20 items-center">
+
+                <!-- Image Column -->
+                <div class="relative reveal reveal-left">
+                    <!-- Decorative border -->
+                    <div class="absolute -top-3 -left-3 sm:-top-4 sm:-left-4 w-full h-full border border-gold/40 rounded-sm z-0"></div>
+                    <!-- Main Image -->
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Entspannende Thai-Massage"
+                        class="relative z-10 w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover rounded-sm shadow-2xl">
+                    <!-- Floating badge -->
+                    <div
+                        class="absolute -bottom-4 -right-4 sm:-bottom-6 sm:-right-6 z-20 bg-wood text-white p-4 sm:p-6 rounded-sm shadow-xl">
+                        <span class="counter text-2xl sm:text-3xl font-serif text-gold font-bold" data-target="15" data-suffix="+">0</span>
+                        <p class="text-[10px] sm:text-xs uppercase tracking-[0.1em] text-gray-400 mt-1">Jahre Erfahrung</p>
                     </div>
-                    <div class="flex flex-col">
-                        <iconify-icon icon="solar:leaf-linear" class="text-[#D4AF37] text-3xl mb-2"></iconify-icon>
-                        <span class="text-sm uppercase tracking-wider font-bold text-[#2c241b]">Natürliche Öle</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <iconify-icon icon="solar:medal-ribbon-linear"
-                            class="text-[#D4AF37] text-3xl mb-2"></iconify-icon>
-                        <span class="text-sm uppercase tracking-wider font-bold text-[#2c241b]">Zertifiziert</span>
+                </div>
+
+                <!-- Text Column -->
+                <div class="reveal reveal-right">
+                    <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Willkommen</span>
+                    <h2 class="text-burgundy text-3xl sm:text-4xl md:text-5xl mt-2 sm:mt-3 mb-5 sm:mb-6">
+                        Zeit für Ruhe &amp;
+                        <span class="italic text-gold">Balance</span>
+                    </h2>
+
+                    <p class="text-gray-600 mb-4 sm:mb-5 leading-relaxed sm:leading-loose font-light text-sm sm:text-base">
+                        In der Hektik des Alltags vergessen wir oft das Wichtigste: uns selbst. Bei Sukanya Massage in
+                        Offenbach bieten wir Ihnen einen Rückzugsort der Stille und Erholung.
+                    </p>
+                    <p class="text-gray-600 mb-6 sm:mb-8 leading-relaxed sm:leading-loose font-light text-sm sm:text-base">
+                        Unsere erfahrenen Therapeutinnen praktizieren die authentische Nuad Phaen Boran — die
+                        traditionelle Thai-Massage. Durch sanfte Dehnungen und rhythmischen Druck entlang der
+                        Energielinien lösen wir Blockaden und aktivieren Ihre Selbstheilungskräfte.
+                    </p>
+
+                    <!-- Feature Icons -->
+                    <div class="flex gap-6 sm:gap-8">
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="service-icon w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-cream-dark flex items-center justify-center mb-2 sm:mb-3 transition-all duration-300 group-hover:bg-gold/10 group-hover:scale-110">
+                                <iconify-icon icon="solar:cup-hot-linear" class="text-gold text-xl sm:text-2xl"></iconify-icon>
+                            </div>
+                            <span class="text-[10px] sm:text-xs uppercase tracking-[0.1em] font-bold text-wood">Teezeremonie</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="service-icon w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-cream-dark flex items-center justify-center mb-2 sm:mb-3 transition-all duration-300 group-hover:bg-gold/10 group-hover:scale-110">
+                                <iconify-icon icon="solar:leaf-linear" class="text-gold text-xl sm:text-2xl"></iconify-icon>
+                            </div>
+                            <span class="text-[10px] sm:text-xs uppercase tracking-[0.1em] font-bold text-wood">Natürliche Öle</span>
+                        </div>
+                        <div class="flex flex-col items-center text-center group">
+                            <div class="service-icon w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-cream-dark flex items-center justify-center mb-2 sm:mb-3 transition-all duration-300 group-hover:bg-gold/10 group-hover:scale-110">
+                                <iconify-icon icon="solar:medal-ribbon-linear" class="text-gold text-xl sm:text-2xl"></iconify-icon>
+                            </div>
+                            <span class="text-[10px] sm:text-xs uppercase tracking-[0.1em] font-bold text-wood">Zertifiziert</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services & Pricing -->
-    <section id="services" class="py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-bold">Unser Angebot</span>
-                <h2 class="text-[#2c241b] text-4xl md:text-5xl mt-3">Leistungen &amp; Preise</h2>
-                <div class="w-24 h-[1px] bg-[#D4AF37] mx-auto mt-6"></div>
+
+    <!-- ============================================
+    SERVICES & PRICING
+    ============================================ -->
+    <section id="services" class="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-10 sm:mb-12 reveal reveal-up">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Unser Angebot</span>
+                <h2 class="text-wood text-3xl sm:text-4xl md:text-5xl mt-2 sm:mt-3">Leistungen &amp; Preise</h2>
+                <div class="gold-divider mx-auto mt-4 sm:mt-6"></div>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Service Card -->
+            <div class="bg-white border border-cream-dark rounded-lg overflow-hidden reveal reveal-up delay-100">
+                <!-- Gold header -->
+                <div class="bg-gradient-to-r from-gold to-gold-light px-6 sm:px-8 py-3.5 flex items-center gap-2.5">
+                    <svg class="w-4 h-4 text-wood/70 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C12 2 6 8 6 13c0 3.3 2.7 6 6 6s6-2.7 6-6c0-5-6-11-6-11zm0 15c-1.7 0-3-1.3-3-3 0-2.5 3-7 3-7s3 4.5 3 7c0 1.7-1.3 3-3 3z"/>
+                        <path d="M10 12.5c0 1.1.9 2 2 2s2-.9 2-2c0-1.5-2-4-2-4s-2 2.5-2 4z" opacity="0.5"/>
+                    </svg>
+                    <span class="text-wood text-xs uppercase tracking-[0.2em] font-bold">Klassische Massagen</span>
+                </div>
 
-                <!-- Standard Services List -->
-                <div class="space-y-8">
-                    <h3 class="text-2xl text-[#701d25] mb-6 italic border-b border-gray-100 pb-2">Klassische Massagen
-                    </h3>
+                <!-- Body -->
+                <div class="p-6 sm:p-8">
+                    <!-- Service name + badge -->
+                    <div class="flex items-start justify-between gap-4 mb-1">
+                        <h3 class="text-xl sm:text-2xl font-bold text-wood">Traditionelle Thai-Massage</h3>
+                        <span class="shrink-0 mt-1 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold/10 text-gold-dark border border-gold/20 rounded-full">Beliebt</span>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base mb-6 pb-6 border-b border-gray-100">Ganzkörpermassage mit Dehnelementen</p>
 
-                    <!-- Item -->
-                    <div class="flex justify-between items-baseline group">
-                        <div class="flex-1">
-                            <h4 class="text-lg font-bold text-[#2c241b] group-hover:text-[#D4AF37] transition-colors">
-                                Traditionelle Thai-Massage</h4>
-                            <p class="text-sm text-gray-500 mt-1 font-light">Ganzkörpermassage mit Dehnelementen</p>
+                    <!-- Pricing columns -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="price-block">
+                            <span class="price-dauer">30 Min</span>
+                            <span class="price-euro">30&euro;</span>
                         </div>
-                        <div class="text-right pl-4">
-                            <div class="text-sm"><span class="font-bold text-[#2c241b]">30€</span> <span
-                                    class="text-gray-400 text-xs">/ 30 Min</span></div>
-                            <div class="text-sm"><span class="font-bold text-[#2c241b]">55€</span> <span
-                                    class="text-gray-400 text-xs">/ 60 Min</span></div>
-                            <div class="text-sm"><span class="font-bold text-[#2c241b]">75€</span> <span
-                                    class="text-gray-400 text-xs">/ 90 Min</span></div>
-                            <div class="text-sm"><span class="font-bold text-[#2c241b]">99€</span> <span
-                                    class="text-gray-400 text-xs">/ 120 Min</span></div>
+                        <div class="price-block">
+                            <span class="price-dauer">60 Min</span>
+                            <span class="price-euro">55&euro;</span>
+                        </div>
+                        <div class="price-block">
+                            <span class="price-dauer">90 Min</span>
+                            <span class="price-euro">75&euro;</span>
+                        </div>
+                        <div class="price-block price-block--highlight">
+                            <span class="price-dauer">120 Min</span>
+                            <span class="price-euro">99&euro;</span>
+                            <span class="price-spar">Bester Wert</span>
                         </div>
                     </div>
                 </div>
-
-                <!-- Special Packages -->
-                <!-- <div class="relative text-white p-8 md:p-10 rounded-sm overflow-hidden">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Thaimassage.jpg/500px-Thaimassage.jpg"
-                        alt="">
-                </div> -->
             </div>
         </div>
     </section>
-    <!-- Locations -->
-    <section id="locations" class="py-24 bg-[#f9f7f2] border-t border-[#e5e7eb]">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <span class="text-[#D4AF37] uppercase tracking-[0.2em] text-xs font-bold">Besuchen Sie uns</span>
-                <h2 class="text-[#2c241b] text-4xl mt-3">Unsere Standorte</h2>
+
+
+    <!-- ============================================
+    LOCATIONS
+    ============================================ -->
+    <section id="locations" class="py-16 sm:py-20 md:py-24 bg-cream relative overflow-hidden">
+        <!-- Decorative lotus -->
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[200px] sm:text-[300px] -right-28 bottom-0 text-gold opacity-[0.04]">
+        </iconify-icon>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal reveal-up">
+                <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Besuchen Sie uns</span>
+                <h2 class="text-wood text-3xl sm:text-4xl md:text-5xl mt-2 sm:mt-3">Unsere Standorte</h2>
+                <div class="gold-divider mx-auto mt-4 sm:mt-6"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
-                <!-- Location 1 -->
-                <div
-                    class="bg-white p-8 rounded-sm shadow-sm border-b-4 border-[#D4AF37] hover:-translate-y-2 transition-transform duration-300">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="bg-[#f9f7f2] p-3 rounded-full text-[#D4AF37]">
-                            <iconify-icon icon="solar:map-point-linear" width="24"></iconify-icon>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <!-- Location Card -->
+                <div class="location-card bg-white p-6 sm:p-8 md:p-10 rounded-sm shadow-sm reveal reveal-left">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="bg-cream p-3 sm:p-4 rounded-full text-gold flex-shrink-0">
+                            <iconify-icon icon="solar:map-point-linear" width="24" height="24"></iconify-icon>
                         </div>
-                        <h3 class="text-xl font-bold uppercase tracking-wide">Frankfurt</h3>
+                        <div>
+                            <h3 class="text-xl sm:text-2xl font-bold uppercase tracking-wide">Offenbach am Main</h3>
+                            <p class="text-gold text-xs uppercase tracking-[0.1em] font-medium">Zentrale</p>
+                        </div>
                     </div>
-                    <address class="not-italic text-gray-600 font-light text-sm mb-6 leading-relaxed">
-                        Frankfurter Str. 47, <br>
-                        63065 Offeenbach am Main
+
+                    <address class="not-italic text-gray-600 font-light text-sm sm:text-base mb-6 leading-relaxed">
+                        Frankfurter Str. 47<br>
+                        63065 Offenbach am Main
                     </address>
-                    <div class="text-sm text-gray-500 space-y-2 border-t border-gray-100 pt-4">
-                        <div class="flex justify-between">
-                            <span>Mo-Sa:</span>
-                            <span class="font-medium text-[#2c241b]">9:00 - 19:00</span>
+
+                    <div class="border-t border-gray-100 pt-5 space-y-3">
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-gray-500 flex items-center gap-2">
+                                <iconify-icon icon="solar:clock-circle-linear" class="text-gold"></iconify-icon>
+                                &Ouml;ffnungszeiten
+                            </span>
                         </div>
-                        <!-- <div class="flex justify-between">
-                            <span>Sa-So:</span>
-                            <span class="font-medium text-[#2c241b]">11:00 - 20:00</span>
-                        </div> -->
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Mo &ndash; Sa:</span>
+                            <span class="font-semibold text-wood">9:00 &ndash; 19:00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Sonntag:</span>
+                            <span class="font-semibold text-wood">Geschlossen</span>
+                        </div>
                     </div>
+
+                    <!-- Quick Contact -->
+                    <div class="mt-6 pt-6 border-t border-gray-100 flex flex-col sm:flex-row gap-3">
+                        <a href="tel:015238426370"
+                            class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-cream text-wood text-sm font-bold rounded-sm hover:bg-cream-dark transition-colors">
+                            <iconify-icon icon="solar:phone-calling-linear" class="text-gold"></iconify-icon>
+                            Anrufen
+                        </a>
+                        <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                            class="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-[#25D366]/10 text-[#25D366] text-sm font-bold rounded-sm hover:bg-[#25D366]/20 transition-colors">
+                            <iconify-icon icon="logos:whatsapp-icon" class="text-lg"></iconify-icon>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Map Placeholder -->
+                <div class="h-[300px] sm:h-[400px] md:h-[450px] rounded-sm overflow-hidden shadow-sm reveal reveal-right">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2561.2!2d8.748!3d50.092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x0000000000000000!2sFrankfurter%20Str.%2047%2C%2063065%20Offenbach%20am%20Main!5e0!3m2!1sde!2sde!4v1"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="Karte zu Sukanya Massage Offenbach">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Booking Section -->
-    <section id="booking"
-        class="relative min-h-[400px] md:min-h-[600px] flex items-center justify-center overflow-hidden">
-        <!-- Background Image -->
-        <img class="absolute inset-0 w-full h-full object-cover"
-            src="https://www.yourtourdesk.com/wp-content/uploads/2022/06/traditional-thai-massage.jpg"
-            alt="Thai Massage">
-        <div class="absolute inset-0 bg-[#2c241b]/20"></div>
+
+    <!-- ============================================
+    CTA / BOOKING
+    ============================================ -->
+    <section id="booking" class="relative min-h-[400px] sm:min-h-[500px] flex items-center justify-center overflow-hidden">
+        <!-- Background -->
+        <img src="https://www.yourtourdesk.com/wp-content/uploads/2022/06/traditional-thai-massage.jpg"
+            alt="Thai Massage"
+            class="absolute inset-0 w-full h-full object-cover scale-105">
+        <div class="absolute inset-0 cta-overlay"></div>
+
+        <!-- Decorative elements -->
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[150px] sm:text-[250px] top-10 right-10 text-white">
+        </iconify-icon>
+
+        <div class="relative z-10 text-center px-4 sm:px-6 max-w-3xl mx-auto reveal reveal-scale">
+            <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Jetzt buchen</span>
+            <h2 class="text-white text-3xl sm:text-4xl md:text-5xl mt-2 sm:mt-3 mb-4 sm:mb-6">
+                Bereit f&uuml;r Ihre<br>
+                <span class="italic text-gold-gradient">Auszeit?</span>
+            </h2>
+            <p class="text-gray-300 text-sm sm:text-base mb-8 sm:mb-10 max-w-lg mx-auto font-light">
+                Vereinbaren Sie ganz einfach einen Termin &mdash; per Anruf oder WhatsApp.
+                Wir freuen uns auf Sie!
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+                <a href="tel:015238426370"
+                    class="w-full sm:w-auto px-8 py-4 border border-white/30 text-white text-sm uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-3">
+                    <iconify-icon icon="solar:phone-calling-linear" class="text-gold text-lg"></iconify-icon>
+                    0152&nbsp;38426370
+                </a>
+                <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                    class="whatsapp-pulse w-full sm:w-auto px-8 py-4 bg-[#25D366] text-white text-sm uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-[#20bd5a] transition-all duration-300 flex items-center justify-center gap-3 shadow-xl shadow-[#25D366]/25">
+                    <iconify-icon icon="logos:whatsapp-icon" class="text-xl"></iconify-icon>
+                    WhatsApp schreiben
+                </a>
+            </div>
+
+            <p class="text-gray-500 text-xs sm:text-sm mt-6">
+                <iconify-icon icon="solar:clock-circle-linear" class="inline text-gold mr-1"></iconify-icon>
+                Mo&ndash;Sa 9:00&ndash;19:00 Uhr &mdash; Wir sind f&uuml;r Sie da
+            </p>
+        </div>
     </section>
-    <!-- Footer -->
-    <footer class="bg-[#1a1510] text-gray-400 py-16 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="bg-[#1a1510] text-gray-400 py-12 sm:py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
+
                 <!-- Brand -->
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
-                        <iconify-icon icon="solar:lotus-linear" class="text-[#D4AF37] text-2xl"></iconify-icon>
+                <div class="sm:col-span-2 lg:col-span-1 reveal reveal-up">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-5">
+                        <iconify-icon icon="solar:lotus-linear" class="text-gold text-2xl"></iconify-icon>
                         <span class="text-lg font-serif text-white tracking-wider">SUKANYA</span>
                     </div>
-                    <p class="text-xs leading-relaxed mb-6">
-                        Traditionelle thailändische Massagekunst in Hamburg und Umgebung. Ein Ort der Ruhe für Ihre
-                        Gesundheit.
+                    <p class="text-xs leading-relaxed text-gray-500 max-w-xs">
+                        Traditionelle thail&auml;ndische Massagekunst in Offenbach am Main.
+                        Ein Ort der Ruhe f&uuml;r Ihre Gesundheit und Ihr Wohlbefinden.
                     </p>
+                    <!-- Social / Badge -->
+                    <div class="flex gap-3 mt-5">
+                        <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold/20 transition-colors">
+                            <iconify-icon icon="logos:whatsapp-icon" class="text-lg"></iconify-icon>
+                        </a>
+                    </div>
                 </div>
-                <!-- Links -->
-                <div>
-                    <h4 class="text-white font-serif mb-6">Menu</h4>
+
+                <!-- Quick Links -->
+                <div class="reveal reveal-up delay-100">
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Menu</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="#about" class="hover:text-[#D4AF37] transition-colors">Über Uns</a></li>
-                        <li><a href="#services" class="hover:text-[#D4AF37] transition-colors">Leistungen</a></li>
-                        <li><a href="#locations" class="hover:text-[#D4AF37] transition-colors">Standorte</a></li>
-                        <!-- <li><a href="#booking" class="hover:text-[#D4AF37] transition-colors">Termin</a></li> -->
-                    </ul>
-                </div>
-                <!-- Legal -->
-                <div>
-                    <h4 class="text-white font-serif mb-6">Rechtliches</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-[#D4AF37] transition-colors">Impressum</a></li>
-                        <li><a href="#" class="hover:text-[#D4AF37] transition-colors">Datenschutz</a></li>
-                        <li><a href="#" class="hover:text-[#D4AF37] transition-colors">AGB</a></li>
+                        <li><a href="#about" class="footer-link text-gray-400 hover:text-gold transition-colors">&Uuml;ber Uns</a></li>
+                        <li><a href="#services" class="footer-link text-gray-400 hover:text-gold transition-colors">Leistungen</a></li>
+                        <li><a href="#locations" class="footer-link text-gray-400 hover:text-gold transition-colors">Standorte</a></li>
+                        <li><a href="#booking" class="footer-link text-gold hover:text-gold-light transition-colors font-medium">Termin buchen</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Info Small -->
-                <div>
-                    <h4 class="text-white font-serif mb-6">Kontakt</h4>
+                <!-- Legal -->
+                <div class="reveal reveal-up delay-200">
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Rechtliches</h4>
                     <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-gold transition-colors">Impressum</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-gold transition-colors">Datenschutz</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-gold transition-colors">AGB</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="reveal reveal-up delay-300">
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Kontakt</h4>
+                    <ul class="space-y-4 text-sm">
                         <li class="flex items-start gap-3">
-                            <iconify-icon icon="solar:phone-calling-linear" class="text-[#D4AF37] mt-1"></iconify-icon>
-                            <span>015238426370</span>
+                            <iconify-icon icon="solar:map-point-linear" class="text-gold mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-gray-400">Frankfurter Str. 47<br>63065 Offenbach</span>
                         </li>
                         <li class="flex items-center gap-3">
-                            <iconify-icon icon="solar:letter-linear" class="text-[#D4AF37]"></iconify-icon>
-                            <span>WhatsApp: 015238426370</span>
+                            <iconify-icon icon="solar:phone-calling-linear" class="text-gold flex-shrink-0"></iconify-icon>
+                            <a href="tel:015238426370" class="text-gray-400 hover:text-gold transition-colors">0152&nbsp;38426370</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="logos:whatsapp-icon" class="text-lg flex-shrink-0"></iconify-icon>
+                            <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                                class="text-gray-400 hover:text-gold transition-colors">WhatsApp: 0152&nbsp;38426370</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
-            <div class="border-t border-white/5 pt-8 text-center text-xs uppercase tracking-widest text-gray-600">
-                © 2024 Sukanya Massage. Alle Rechte vorbehalten.
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs uppercase tracking-[0.15em] text-gray-600">
+                <span>&copy; 2024 Sukanya Massage. Alle Rechte vorbehalten.</span>
+                <span class="text-gray-700">Offenbach am Main</span>
             </div>
         </div>
     </footer>
 
-    <script>
-        // Mobile Menu Logic
-        const menuBtn = document.getElementById('menu-btn');
-        const closeBtn = document.getElementById('close-menu');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuLinks = mobileMenu.querySelectorAll('a');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('translate-x-full');
-            document.body.classList.toggle('overflow-hidden');
-        }
-
-        menuBtn.addEventListener('click', toggleMenu);
-        closeBtn.addEventListener('click', toggleMenu);
-
-        // Close menu when clicking a link
-        menuLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
-        });
-
-        // Simple Fade In on Scroll Observer
-        const observerOptions = {
-            threshold: 0.1
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-[fadeIn_0.8s_ease-out_forwards]');
-                    entry.target.style.opacity = '1';
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section > div').forEach(section => {
-            section.style.opacity = '0';
-            observer.observe(section);
-        });
-    </script>
-
-    <!-- Add simple keyframe animation definition in style since tailwind config is restricted -->
-    <style>
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    </style>
+    <!-- Main Script -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
