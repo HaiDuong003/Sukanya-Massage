@@ -262,141 +262,54 @@
     <!-- ============================================
     SERVICES & PRICING
     ============================================ -->
-    <section id="services" class="py-16 sm:py-20 md:py-24 bg-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+    <section id="services" class="relative py-16 sm:py-20 md:py-24 bg-white overflow-hidden">
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 relative z-10">
             <!-- Section Header -->
-            <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal reveal-up">
+            <div class="text-center mb-10 sm:mb-12 reveal reveal-up">
                 <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Unser Angebot</span>
                 <h2 class="text-wood text-3xl sm:text-4xl md:text-5xl mt-2 sm:mt-3">Leistungen &amp; Preise</h2>
                 <div class="gold-divider mx-auto mt-4 sm:mt-6"></div>
-                <p class="text-gray-500 text-sm sm:text-base mt-4 max-w-xl mx-auto font-light">
-                    Traditionelle Thai-Massagen und ausgewählte Wellness-Behandlungen für Ihr Wohlbefinden.
-                </p>
             </div>
 
-            <!-- Category Tabs -->
-            <div class="flex flex-wrap justify-center gap-6 sm:gap-8 md:gap-12 mb-10 sm:mb-12 border-b border-gray-100 pb-0 reveal reveal-up delay-100">
-                <button data-category="classic"
-                    class="category-tab active text-wood text-sm uppercase tracking-[0.15em] font-bold pb-3 border-b-2 border-transparent transition-all duration-300">
-                    Klassische Massagen
-                </button>
-                <button data-category="wellness"
-                    class="category-tab text-gray-400 text-sm uppercase tracking-[0.15em] font-bold pb-3 border-b-2 border-transparent transition-all duration-300 hover:text-wood">
-                    Wellness &amp; Spa
-                </button>
-                <button data-category="packages"
-                    class="category-tab text-gray-400 text-sm uppercase tracking-[0.15em] font-bold pb-3 border-b-2 border-transparent transition-all duration-300 hover:text-wood">
-                    Pakete
-                </button>
-            </div>
-
-            <!-- === Category: Classic === -->
-            <div id="services-classic">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                    <!-- Thai-Massage -->
-                    <div class="service-card bg-cream p-6 sm:p-8 rounded-sm reveal reveal-up delay-100">
-                        <div class="service-icon w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                            <iconify-icon icon="solar:lotus-linear" class="text-gold text-xl"></iconify-icon>
-                        </div>
-                        <h3 class="text-lg font-bold text-wood mb-2">Traditionelle Thai-Massage</h3>
-                        <p class="text-gray-500 text-sm font-light mb-5">Ganzkörpermassage mit Dehnelementen</p>
-                        <div class="space-y-2 border-t border-gray-200 pt-4">
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">30 Min</span><span class="font-bold text-wood">30&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">60 Min</span><span class="font-bold text-wood">55&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">90 Min</span><span class="font-bold text-wood">75&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">120 Min</span><span class="font-bold text-wood">99&euro;</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Thai-Öl-Massage -->
-                    <div class="service-card bg-cream p-6 sm:p-8 rounded-sm reveal reveal-up delay-200">
-                        <div class="service-icon w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                            <iconify-icon icon="solar:droplet-linear" class="text-gold text-xl"></iconify-icon>
-                        </div>
-                        <h3 class="text-lg font-bold text-wood mb-2">Thai-Öl-Massage</h3>
-                        <p class="text-gray-500 text-sm font-light mb-5">Sanfte Massage mit warmen Naturölen</p>
-                        <div class="space-y-2 border-t border-gray-200 pt-4">
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">30 Min</span><span class="font-bold text-wood">35&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">60 Min</span><span class="font-bold text-wood">60&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">90 Min</span><span class="font-bold text-wood">85&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">120 Min</span><span class="font-bold text-wood">110&euro;</span></div>
-                        </div>
-                    </div>
-
-                    <!-- Fußreflexzonenmassage -->
-                    <div class="service-card bg-cream p-6 sm:p-8 rounded-sm reveal reveal-up delay-300">
-                        <div class="service-icon w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                            <iconify-icon icon="solar:foot-line" class="text-gold text-xl"></iconify-icon>
-                        </div>
-                        <h3 class="text-lg font-bold text-wood mb-2">Thai-Fu&szlig;reflexzonenmassage</h3>
-                        <p class="text-gray-500 text-sm font-light mb-5">Stimulierende Fu&szlig;massage nach Thai-Art</p>
-                        <div class="space-y-2 border-t border-gray-200 pt-4">
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">30 Min</span><span class="font-bold text-wood">25&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">60 Min</span><span class="font-bold text-wood">45&euro;</span></div>
-                        </div>
-                    </div>
+            <!-- Service Card -->
+            <div class="bg-white border border-cream-dark rounded-lg overflow-hidden reveal reveal-up delay-100">
+                <!-- Gold header -->
+                <div class="bg-gradient-to-r from-gold to-gold-light px-6 sm:px-8 py-3.5 flex items-center gap-2.5">
+                    <svg class="w-4 h-4 text-wood/70 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C12 2 6 8 6 13c0 3.3 2.7 6 6 6s6-2.7 6-6c0-5-6-11-6-11zm0 15c-1.7 0-3-1.3-3-3 0-2.5 3-7 3-7s3 4.5 3 7c0 1.7-1.3 3-3 3z"/>
+                        <path d="M10 12.5c0 1.1.9 2 2 2s2-.9 2-2c0-1.5-2-4-2-4s-2 2.5-2 4z" opacity="0.5"/>
+                    </svg>
+                    <span class="text-wood text-xs uppercase tracking-[0.2em] font-bold">Klassische Massagen</span>
                 </div>
-            </div>
 
-            <!-- === Category: Wellness === -->
-            <div id="services-wellness" class="hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                    <!-- Kräuterstempel -->
-                    <div class="service-card bg-cream p-6 sm:p-8 rounded-sm reveal reveal-up delay-100">
-                        <div class="service-icon w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                            <iconify-icon icon="solar:herbs-linear" class="text-gold text-xl"></iconify-icon>
-                        </div>
-                        <h3 class="text-lg font-bold text-wood mb-2">Thai-Kr&auml;uterstempel-Massage</h3>
-                        <p class="text-gray-500 text-sm font-light mb-5">Warme Kr&auml;uterstempel zur Tiefenentspannung</p>
-                        <div class="space-y-2 border-t border-gray-200 pt-4">
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">60 Min</span><span class="font-bold text-wood">65&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">90 Min</span><span class="font-bold text-wood">90&euro;</span></div>
-                        </div>
+                <!-- Body -->
+                <div class="p-6 sm:p-8">
+                    <!-- Service name + badge -->
+                    <div class="flex items-start justify-between gap-4 mb-1">
+                        <h3 class="text-xl sm:text-2xl font-bold text-wood">Traditionelle Thai-Massage</h3>
+                        <span class="shrink-0 mt-1 px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-gold/10 text-gold-dark border border-gold/20 rounded-full">Beliebt</span>
                     </div>
+                    <p class="text-gray-400 text-sm sm:text-base mb-6 pb-6 border-b border-gray-100">Ganzkörpermassage mit Dehnelementen</p>
 
-                    <!-- Kopf-Nacken-Schulter -->
-                    <div class="service-card bg-cream p-6 sm:p-8 rounded-sm reveal reveal-up delay-200">
-                        <div class="service-icon w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
-                            <iconify-icon icon="solar:face-scan-linear" class="text-gold text-xl"></iconify-icon>
+                    <!-- Pricing columns -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+                        <div class="price-block">
+                            <span class="price-dauer">30 Min</span>
+                            <span class="price-euro">30&euro;</span>
                         </div>
-                        <h3 class="text-lg font-bold text-wood mb-2">Kopf-, Nacken- &amp; Schultermassage</h3>
-                        <p class="text-gray-500 text-sm font-light mb-5">L&ouml;st Verspannungen im oberen K&ouml;rperbereich</p>
-                        <div class="space-y-2 border-t border-gray-200 pt-4">
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">20 Min</span><span class="font-bold text-wood">25&euro;</span></div>
-                            <div class="flex justify-between text-sm"><span class="text-gray-500">40 Min</span><span class="font-bold text-wood">40&euro;</span></div>
+                        <div class="price-block">
+                            <span class="price-dauer">60 Min</span>
+                            <span class="price-euro">55&euro;</span>
                         </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- === Category: Packages === -->
-            <div id="services-packages" class="hidden">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                    <!-- Wellness Paket -->
-                    <div class="package-card bg-gradient-to-br from-wood to-wood-light text-white p-6 sm:p-8 rounded-sm reveal reveal-up delay-100">
-                        <div class="flex items-center gap-2 mb-3">
-                            <iconify-icon icon="solar:star-fall-linear" class="text-gold text-lg"></iconify-icon>
-                            <span class="text-gold text-xs uppercase tracking-[0.15em] font-bold">Paket</span>
+                        <div class="price-block">
+                            <span class="price-dauer">90 Min</span>
+                            <span class="price-euro">75&euro;</span>
                         </div>
-                        <h3 class="text-xl font-serif mb-2">Wellness-Paket</h3>
-                        <p class="text-gray-400 text-sm font-light mb-5">60 Min Thai-Massage + 30 Min Fu&szlig;reflexzonenmassage</p>
-                        <div class="flex items-end justify-between border-t border-white/10 pt-4">
-                            <span class="text-gray-400 text-sm">Gesamtdauer: 90 Min</span>
-                            <span class="text-2xl font-serif text-gold font-bold">75&euro;</span>
-                        </div>
-                    </div>
-
-                    <!-- Premium Paket -->
-                    <div class="package-card bg-gradient-to-br from-wood to-wood-light text-white p-6 sm:p-8 rounded-sm reveal reveal-up delay-200">
-                        <div class="flex items-center gap-2 mb-3">
-                            <iconify-icon icon="solar:crown-linear" class="text-gold text-lg"></iconify-icon>
-                            <span class="text-gold text-xs uppercase tracking-[0.15em] font-bold">Premium</span>
-                        </div>
-                        <h3 class="text-xl font-serif mb-2">Premium-Paket</h3>
-                        <p class="text-gray-400 text-sm font-light mb-5">90 Min Thai-Massage + 30 Min &Ouml;l-Massage</p>
-                        <div class="flex items-end justify-between border-t border-white/10 pt-4">
-                            <span class="text-gray-400 text-sm">Gesamtdauer: 120 Min</span>
-                            <span class="text-2xl font-serif text-gold font-bold">110&euro;</span>
+                        <div class="price-block price-block--highlight">
+                            <span class="price-dauer">120 Min</span>
+                            <span class="price-euro">99&euro;</span>
+                            <span class="price-spar">Bester Wert</span>
                         </div>
                     </div>
                 </div>

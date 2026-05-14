@@ -189,55 +189,69 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ===========================================
-   Service Cards
+   Service Pricing
    =========================================== */
-.service-card {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.price-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  padding: 1rem 0.5rem;
+  background: var(--cream-bg);
+  border: 1px solid var(--cream-dark);
+  border-radius: 8px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  cursor: default;
+  user-select: none;
 }
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.12);
+.price-block:hover {
+  border-color: var(--thai-gold);
+  background: #fff;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(212, 175, 55, 0.15);
 }
 
-.service-card .service-icon {
-  transition: transform 0.4s ease;
+.price-block--highlight {
+  border-color: var(--thai-gold);
+  background: linear-gradient(135deg, rgba(212,175,55,0.08), rgba(212,175,55,0.03));
 }
-.service-card:hover .service-icon {
-  transform: scale(1.1) rotate(-5deg);
+.price-block--highlight:hover {
+  background: var(--thai-gold);
+  border-color: var(--thai-gold);
+}
+.price-block--highlight:hover .price-euro,
+.price-block--highlight:hover .price-dauer {
+  color: var(--dark-wood);
 }
 
-/* Service category tabs */
-.category-tab.active {
-  color: var(--thai-gold);
-  border-bottom-color: var(--thai-gold);
+.price-dauer {
+  font-size: 0.7rem;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-/* ===========================================
-   Package Cards
-   =========================================== */
-.package-card {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.price-euro {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--dark-wood);
+  line-height: 1.2;
+  transition: color 0.3s ease;
 }
-.package-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--thai-gold), var(--thai-gold-light), var(--thai-gold));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
+
+.price-spar {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--thai-gold-dark);
+  margin-top: 0.1rem;
+  transition: color 0.3s ease;
 }
-.package-card:hover::before {
-  transform: scaleX(1);
-}
-.package-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 60px rgba(212, 175, 55, 0.15);
+.price-block--highlight:hover .price-spar {
+  color: var(--dark-wood);
 }
 
 /* ===========================================

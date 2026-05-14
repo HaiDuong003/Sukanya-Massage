@@ -4,6 +4,62 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // Mark document as JS-ready so CSS reveal transitions don't fire prematurely
+  document.documentElement.classList.add('js-ready');
+
+  // ---------- Smooth Scroll with Nav Offset ----------
+  function initSmoothScroll() {
+    const navHeight = 80; // matches nav height
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        var targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        var target = document.querySelector(targetId);
+        if (target) {
+          e.preventDefault();
+          var targetPosition = target.getBoundingClientRect().top + window.scrollY - navHeight;
+          window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  }
+  initSmoothScroll();
+
+  // ---------- Hero Entrance Sequence ----------
+  function initHeroEntrance() {
+    var heroItems = document.querySelectorAll('.hero-item');
+    heroItems.forEach(function (el) {
+      el.classList.add('animate');
+    });
+  }
+  initHeroEntrance();
+
+  // ---------- Parallax Effect (Hero & CTA) ----------
+  function initParallax() {
+    var heroImg = document.querySelector('#hero img');
+    var ctaImg = document.querySelector('#booking img');
+    var images = [];
+
+    if (heroImg) images.push({ el: heroImg, rate: 0.3 });
+    if (ctaImg) images.push({ el: ctaImg, rate: 0.2 });
+
+    if (images.length === 0) return;
+
+    function updateParallax() {
+      var scrollY = window.scrollY;
+      images.forEach(function (img) {
+        img.el.style.transform = 'translateY(' + (scrollY * img.rate) + 'px) scale(1.05)';
+      });
+    }
+
+    window.addEventListener('scroll', updateParallax, { passive: true });
+  }
+  initParallax();
+
   // ---------- Mobile Menu ----------
   const menuBtn = document.getElementById('menu-btn');
   const closeBtn = document.getElementById('close-menu');
@@ -58,54 +114,29 @@ document.addEventListener('DOMContentLoaded', function () {
   const revealObserver = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
+        // Add a small stagger based on each element's data-delay or index
         entry.target.classList.add('visible');
-        // Optionally unobserve after reveal
-        // revealObserver.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -60px 0px'
   });
 
+  // Observe ALL reveal elements
   document.querySelectorAll('.reveal').forEach(function (el) {
     revealObserver.observe(el);
   });
 
-  // ---------- Service Category Tabs ----------
-  const tabs = document.querySelectorAll('.category-tab');
-  const categories = {
-    classic: document.getElementById('services-classic'),
-    wellness: document.getElementById('services-wellness'),
-    packages: document.getElementById('services-packages')
-  };
-
-  tabs.forEach(function (tab) {
-    tab.addEventListener('click', function () {
-      // Update active tab
-      tabs.forEach(function (t) { t.classList.remove('active', 'text-[#D4AF37]', 'border-[#D4AF37]'); });
-      tab.classList.add('active', 'text-[#D4AF37]', 'border-[#D4AF37]');
-
-      // Show relevant category
-      var target = tab.getAttribute('data-category');
-      Object.keys(categories).forEach(function (key) {
-        if (categories[key]) {
-          if (key === target) {
-            categories[key].classList.remove('hidden');
-            // Re-trigger reveal animation
-            categories[key].querySelectorAll('.reveal').forEach(function (el) {
-              el.classList.remove('visible');
-              // Force reflow then re-add
-              void el.offsetWidth;
-              el.classList.add('visible');
-            });
-          } else {
-            categories[key].classList.add('hidden');
-          }
-        }
-      });
+  // ---------- Icon Fallback / Enhance ----------
+  function enhanceIcons() {
+    // Add hover class to all iconify icons in the service-icon divs
+    document.querySelectorAll('.service-icon iconify-icon').forEach(function (icon) {
+      icon.classList.add('icon-hover');
     });
-  });
+  }
+  enhanceIcons();
 
   // ---------- Counter Animation (for stats) ----------
   function animateCounter(el) {
