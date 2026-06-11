@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Impressum der Sukanya Massage in Offenbach am Main.">
+    <title>Impressum | Sukanya Massage — Offenbach</title>
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Playfair Display', 'serif'],
+                        sans: ['Lato', 'sans-serif']
+                    },
+                    colors: {
+                        gold: { DEFAULT: '#D4AF37', light: '#eac54e', dark: '#b8962e' },
+                        wood: { DEFAULT: '#2c241b', light: '#3d3226' },
+                        cream: { DEFAULT: '#f9f7f2', dark: '#f0ece4' },
+                        burgundy: { DEFAULT: '#701d25', light: '#8a2a33' }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="antialiased overflow-x-hidden text-wood bg-cream">
+
+    <!-- ============================================
+    NAVIGATION
+    ============================================ -->
+    <nav class="fixed w-full z-50 transition-all duration-500 border-b border-transparent nav-scrolled">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 sm:gap-3 group">
+                <iconify-icon icon="solar:lotus-linear"
+                    class="text-gold text-2xl sm:text-3xl transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12">
+                </iconify-icon>
+                <div class="flex flex-col">
+                    <span class="text-lg sm:text-xl font-serif text-white tracking-[0.15em] font-bold leading-tight">SUKANYA</span>
+                    <span class="text-[10px] sm:text-[11px] text-gold uppercase tracking-[0.25em] leading-tight">Thai-Massage</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-6 lg:gap-10">
+                <a href="index.html#about"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Über
+                    Uns</a>
+                <a href="index.html#services"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Leistungen</a>
+                <a href="index.html#locations"
+                    class="text-xs lg:text-sm uppercase tracking-[0.15em] text-gray-300 hover:text-gold transition-colors duration-300 relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full">Standorte</a>
+                <a href="index.html#booking"
+                    class="ml-2 px-5 py-2.5 bg-gold text-wood text-xs uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-gold-light transition-all duration-300 hover:shadow-lg hover:shadow-gold/25">Termin
+                    buchen</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gold text-2xl focus:outline-none hover:text-gold-light transition-colors">
+                <iconify-icon icon="solar:hamburger-menu-linear"></iconify-icon>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="menu-overlay"
+        class="fixed inset-0 bg-black/50 z-40 transition-opacity duration-400 opacity-0 pointer-events-none md:hidden">
+    </div>
+
+    <!-- Mobile Menu Panel -->
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-wood z-50 transform translate-x-full flex flex-col pt-24 px-8 gap-6 shadow-2xl md:hidden">
+        <!-- Close Button -->
+        <button id="close-menu" class="absolute top-5 right-5 text-gray-400 hover:text-white text-3xl transition-colors">
+            <iconify-icon icon="solar:close-circle-linear"></iconify-icon>
+        </button>
+
+        <!-- Decorative top line -->
+        <div class="gold-divider mb-2"></div>
+
+        <a href="index.html#about"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Über Uns</a>
+        <a href="index.html#services"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Leistungen</a>
+        <a href="index.html#locations"
+            class="text-xl font-serif text-white hover:text-gold transition-colors border-b border-white/5 pb-4">Standorte</a>
+        <a href="index.html#booking"
+            class="mt-4 px-6 py-3 bg-gold text-wood text-center text-sm uppercase tracking-[0.15em] font-bold rounded-sm hover:bg-gold-light transition-all">Termin
+            buchen</a>
+
+        <!-- Contact info in mobile menu -->
+        <div class="mt-auto pb-8 text-gray-500 text-xs space-y-2">
+            <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:map-point-linear" class="text-gold text-sm"></iconify-icon>
+                <span>Frankfurter Str. 47, 63065 Offenbach</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <iconify-icon icon="solar:phone-calling-linear" class="text-gold text-sm"></iconify-icon>
+                <span>0152&nbsp;38426370</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+    PAGE HEADER
+    ============================================ -->
+    <header class="relative w-full pt-32 pb-16 sm:pt-40 sm:pb-24 bg-wood overflow-hidden">
+        <iconify-icon icon="solar:lotus-linear"
+            class="lotus-deco text-[200px] sm:text-[300px] top-10 -left-20 text-gold animate-[lotusSpin_60s_linear_infinite]">
+        </iconify-icon>
+        <div class="relative z-10 text-center px-4 max-w-3xl mx-auto">
+            <span class="text-gold uppercase tracking-[0.2em] text-xs font-bold">Rechtliches</span>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl text-white mt-3 font-serif">Impressum</h1>
+            <div class="gold-divider mx-auto mt-6"></div>
+        </div>
+    </header>
+
+
+    <!-- ============================================
+    CONTENT
+    ============================================ -->
+    <section class="py-16 sm:py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="bg-white p-8 sm:p-12 rounded-lg shadow-sm border border-cream-dark">
+                <div class="space-y-8">
+                    <!-- Section 1 -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-wood mb-4">Angaben gemäß § 5 TMG</h2>
+                        <p class="text-gray-600 leading-relaxed font-light">
+                            Nguyen Thi Luyen<br>
+                            Frankfurter Str. 47<br>
+                            63065 Offenbach am Main
+                        </p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="h-px bg-gray-100"></div>
+
+                    <!-- Section 2 -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-wood mb-4">Kontakt</h2>
+                        <p class="text-gray-600 leading-relaxed font-light">
+                            Telefon: <a href="tel:015238426370" class="text-burgundy hover:text-burgundy-light transition-colors">0152 38426370</a><br>
+                            E-Mail: <a href="mailto:nguyenluyen140301@gmail.com" class="text-burgundy hover:text-burgundy-light transition-colors">nguyenluyen140301@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back to Home -->
+            <div class="text-center mt-10">
+                <a href="index.html" class="inline-flex items-center gap-2 text-gold hover:text-gold-dark transition-colors font-semibold">
+                    <iconify-icon icon="solar:arrow-left-linear"></iconify-icon>
+                    Zurück zur Startseite
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer class="bg-[#1a1510] text-gray-400 py-12 sm:py-16 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <!-- Main Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 mb-10 sm:mb-12">
+
+                <!-- Brand -->
+                <div class="sm:col-span-2 lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-4 sm:mb-5">
+                        <iconify-icon icon="solar:lotus-linear" class="text-gold text-2xl"></iconify-icon>
+                        <span class="text-lg font-serif text-white tracking-wider">SUKANYA</span>
+                    </div>
+                    <p class="text-xs leading-relaxed text-gray-500 max-w-xs">
+                        Traditionelle thailändische Massagekunst in Offenbach am Main.
+                        Ein Ort der Ruhe für Ihre Gesundheit und Ihr Wohlbefinden.
+                    </p>
+                    <!-- Social / Badge -->
+                    <div class="flex gap-3 mt-5">
+                        <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                            class="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold/20 transition-colors">
+                            <iconify-icon icon="logos:whatsapp-icon" class="text-lg"></iconify-icon>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Menu</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html#about" class="footer-link text-gray-400 hover:text-gold transition-colors">&Uuml;ber Uns</a></li>
+                        <li><a href="index.html#services" class="footer-link text-gray-400 hover:text-gold transition-colors">Leistungen</a></li>
+                        <li><a href="index.html#locations" class="footer-link text-gray-400 hover:text-gold transition-colors">Standorte</a></li>
+                        <li><a href="index.html#booking" class="footer-link text-gold hover:text-gold-light transition-colors font-medium">Termin buchen</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Rechtliches</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="./impressum.html" class="footer-link text-gold hover:text-gold-light transition-colors font-medium">Impressum</a></li>
+                        <li><a href="./datenschutz.html" class="footer-link text-gray-400 hover:text-gold transition-colors">Datenschutz</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-serif text-base sm:text-lg mb-5 sm:mb-6">Kontakt</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex items-start gap-3">
+                            <iconify-icon icon="solar:map-point-linear" class="text-gold mt-0.5 flex-shrink-0"></iconify-icon>
+                            <span class="text-gray-400">Frankfurter Str. 47<br>63065 Offenbach</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="solar:phone-calling-linear" class="text-gold flex-shrink-0"></iconify-icon>
+                            <a href="tel:015238426370" class="text-gray-400 hover:text-gold transition-colors">0152&nbsp;38426370</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <iconify-icon icon="logos:whatsapp-icon" class="text-lg flex-shrink-0"></iconify-icon>
+                            <a href="https://wa.me/4915238426370" target="_blank" rel="noopener"
+                                class="text-gray-400 hover:text-gold transition-colors">WhatsApp: 0152&nbsp;38426370</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/5 pt-6 sm:pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] sm:text-xs uppercase tracking-[0.15em] text-gray-600">
+                <span>&copy; 2025 Sukanya Massage. Alle Rechte vorbehalten.</span>
+                <span class="text-gray-700">Offenbach am Main</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main Script -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
